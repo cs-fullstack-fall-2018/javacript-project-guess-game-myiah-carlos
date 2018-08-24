@@ -1,9 +1,11 @@
 var clicks = 0;
 var targets = 5;
 var hits = 0;
-document.getElementById("level2").disabled = true; //not working right now
-
 function letsRock() {
+
+    if(hits !== targets) {
+        document.getElementById("level2").disabled = true; //not working right now
+    }
 
     var theGo = document.getElementById("goGetIt");
     theGo.onclick = function () {
@@ -43,6 +45,7 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
             $("td").off("click");
             $("table").off("click");
             $(".targetImg").remove();
+            document.getElementById("level2").disabled = false;
         }
     });
 
