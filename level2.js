@@ -55,7 +55,6 @@ function setUpTargetsAndPlay2(numberOfTargets, displayTimeMs) {
         var imgID2 = "img" + targetNum2;
 
         $('#' + tdID2).on("click", clickedTarget2).append("<img id = " + imgID2 + " class= 'targetImg' src='bird.png'>");
-        $('#' + imgID2).delay(2000).show(0);
         $('#' + imgID2).delay(displayTimeMs).hide(0);
     }
 

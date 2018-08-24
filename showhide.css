@@ -1,11 +1,13 @@
 table {
     /* Use whatever background image (or images) you like */
-    background: url("forest-background.jpg") no-repeat;
+    background: url("fallout4mod-decay.jpg") no-repeat;
     table-layout: fixed;
+    background-position: 0px -130px;
 }
 
 /* Set each td size */
 td {
-    width: 100px;
+
+    width: 200px;
     height: 100px;
 }
