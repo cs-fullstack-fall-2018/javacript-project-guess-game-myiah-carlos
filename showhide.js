@@ -1,13 +1,17 @@
 var clicks = 0;
-var targets = 0;
+var targets = 5;
 var hits = 0;
-
 function letsRock() {
+
+    if(hits !== targets) {
+        document.getElementById("level2").disabled = true; //not working right now
+    }
+
     var theGo = document.getElementById("goGetIt");
     theGo.onclick = function () {
         // Get random number of targets and do setup
-        var targetKount = document.getElementById("numberOfTargets").value;
-        var targetTime = document.getElementById("displayTime").value;
+        var targetKount = targets;
+        var targetTime = 5000;
         // No start the game!
         setUpTargetsAndPlay(targetKount, targetTime);
     };
@@ -35,16 +39,17 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
 
         clicks += 1;
         // alert("clicked. Max = " + clicks);
-        if (clicks == targets) {
+        if (clicks === targets) {
             alert("No more clicks! You got " + hits + " out of " + targets);
             // Turn off click detection
             $("td").off("click");
             $("table").off("click");
             $(".targetImg").remove();
+            document.getElementById("level2").disabled = false;
         }
     });
 
-    console.log("Selecting " + targets + " targets")
+    console.log("Selecting " + targets + " targets");
     // Get the number of targets specified and randomly picks cells to display them in for the target table
     for (var x = 0; x < targets; x++) {
         var targetNum = getRandomInt(1, 50); // Pick a random table cell
