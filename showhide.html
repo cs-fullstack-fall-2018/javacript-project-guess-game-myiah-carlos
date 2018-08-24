@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<div class="container">
+<br class="container">
 
     <div class="jumbotron">
         <!-- This table will hold the target(s) -->
@@ -84,21 +84,28 @@
     </div>
 
         <!-- Setup some basic controls to get number of # targets, display time -->
-        <p>
+        <p align="center">
             <label for="numberOfTargets">Number of Targets:</label>
-            <input id="numberOfTargets" type="text"/>
+            <input id="numberOfTargets" type="button" value="5 Targets"/>
 
             <label for="displayTime">TargetDisplay Time (ms):</label>
-            <input id="displayTime" type="text"/>
-
+            <input id="displayTime" type="button" value="5 secs"/>
+        </br>
+        <div align="center">
             <button class="btn btn-primary" id="goGetIt">GO!</button>
+        </div>
         </p>
+        </br>
+        <div align="center">
+            <input type="button" value="Next Level" id="level2">
+        </div>
 
         <script>
 
 <!-- Kick off the game -->
             letsRock();
         </script>
-    </div>
+
+</div>
 </body>
 </html>
