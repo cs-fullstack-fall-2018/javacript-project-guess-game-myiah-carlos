@@ -1,13 +1,13 @@
-var clicks = 0;
-var targets = 15;
-var hits = 0;
+var clicks3 = 0;
+var targets3 = 15;
+var hits3 = 0;
 function letsRock() {
 
 
     var theGo = document.getElementById("goGetIt");
     theGo.onclick = function () {
         // Get random number of targets and do setup
-        var targetKount = targets;
+        var targetKount = targets3;
         var targetTime = 13000;
         // No start the game!
         setUpTargetsAndPlay(targetKount, targetTime);
@@ -22,22 +22,22 @@ function getRandomInt(min, max) {
 function clickedTarget() {
     // Right now, just updates a count.
     // Could use some player feedback here
-    hits += 1;
+    hits3 += 1;
 };
 
 // The main function that sets up targets and starts a game
 function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
-    clicks = 0;
-    targets = numberOfTargets;
-    hits = 0;
+    clicks3 = 0;
+    targets3 = numberOfTargets;
+    hits3 = 0;
 
     // Setup click detection for the entire table
     $("table").on("click", function () {
 
-        clicks += 1;
+        clicks3 += 1;
         // alert("clicked. Max = " + clicks);
-        if (clicks === targets) {
-            alert("No more clicks! You got " + hits + " out of " + targets);
+        if (clicks3 === targets3) {
+            alert("No more clicks! You got " + hits3 + " out of " + targets3);
             // Turn off click detection
             $("td").off("click");
             $("table").off("click");
@@ -45,9 +45,9 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         }
     });
 
-    console.log("Selecting " + targets + " targets");
+    console.log("Selecting " + targets3 + " targets");
     // Get the number of targets specified and randomly picks cells to display them in for the target table
-    for (var x = 0; x < targets; x++) {
+    for (var x = 0; x < targets3; x++) {
         var targetNum = getRandomInt(1, 50); // Pick a random table cell
         console.log("Table cell selected for target = " + targetNum);
         var tdID = "td" + targetNum;
