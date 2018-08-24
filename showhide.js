@@ -4,7 +4,7 @@ var hits = 0;
 function letsRock() {
 
     if(hits !== targets) {
-        document.getElementById("level2").disabled = true; //not working right now
+        document.getElementById("level2").disabled = true;
     }
 
     var theGo = document.getElementById("goGetIt");
@@ -57,7 +57,7 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         var tdID = "td" + targetNum;
         var imgID = "img" + targetNum;
 
-        $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='lotusflower.png'>");
+        $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='zombiebaby7.png'>");
         $('#' + imgID).delay(displayTimeMs).hide(0);
     }
 
