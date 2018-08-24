@@ -1,13 +1,13 @@
 var clicks = 0;
-var targets = 0;
+var targets = 5;
 var hits = 0;
 
 function letsRock() {
     var theGo = document.getElementById("goGetIt");
     theGo.onclick = function () {
-        // Get random number of targets and do setup
-        var targetKount = document.getElementById("numberOfTargets").value;
-        var targetTime = document.getElementById("displayTime").value;
+        // Get  number of targets for level 1 and do setup
+        var targetKount = targets;
+        var targetTime = 5000;
         // No start the game!
         setUpTargetsAndPlay(targetKount, targetTime);
     };
@@ -58,3 +58,4 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
     }
 
 };
+
