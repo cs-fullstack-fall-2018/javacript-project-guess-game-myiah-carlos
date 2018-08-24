@@ -57,8 +57,7 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         var tdID = "td" + targetNum;
         var imgID = "img" + targetNum;
 
-        $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='zombiebaby7.png'>");
-        $('#' + imgID).delay(2000).show(0);
+        $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='lotusflower.png'>");
         $('#' + imgID).delay(displayTimeMs).hide(0);
     }
 
