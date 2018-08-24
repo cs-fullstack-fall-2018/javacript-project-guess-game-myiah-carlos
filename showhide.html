@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="showhide.css"/>
     <script src="showhide.js"></script>
 
+
 </head>
 
 <body>
@@ -84,17 +85,27 @@
     </div>
 
         <!-- Setup some basic controls to get number of # targets, display time -->
-        <p>
+        <p align="center">
+            <label><em>Number of Targets: 5 </em></label></p>
+        <p align="center">
+            <label><em>Time: 5sec. <em></em></label></p>
 
-            <button class="btn btn-primary" id="goGetIt">GO!</button>
-            <button class="btn btn-primary" id="Level2" >Level 2!</button>
-        </p>
+
+        <div align="center">
+            <button class="btn btn-primary" id="goGetIt"><strong><em>GO!</em></strong></button>
+        </div>
+
+<div align="center">
+            <input type="button" value="Next Level" id="level2">
+        </div>
+</div>
 
         <script>
 
 <!-- Kick off the game -->
             letsRock();
         </script>
-    </div>
+
+
 </body>
 </html>
