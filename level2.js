@@ -1,14 +1,16 @@
 var clicks2 = 0;
 var targets2 = 8;
 var hits2 = 0;
-document.getElementById("level2").disabled = true; //not working right now
 
 function letsRock2() {
+    if(hits2 !== targets2) {
+        document.getElementById("level2").disabled = true; //not working right now
+    }
 
     var theGo2 = document.getElementById("goGetIt");
     theGo2.onclick = function () {
         // Get random number of targets and do setup
-        var targetKount2 = targets2;
+        var targetKount2 = targets;
         var targetTime2 = 10000;
         // No start the game!
         setUpTargetsAndPlay2(targetKount, targetTime);
@@ -37,8 +39,8 @@ function setUpTargetsAndPlay2(numberOfTargets, displayTimeMs) {
 
         clicks2 += 1;
         // alert("clicked. Max = " + clicks);
-        if (clicks2 === targets2) {
-            document.write("No more clicks! You got " + hits2 + " out of " + targets2);
+        if (hits2 === targets2) {
+            alert("No more clicks! You got " + hits2 + " out of " + targets2);
             // Turn off click detection
             $("td").off("click");
             $("table").off("click");
@@ -54,7 +56,11 @@ function setUpTargetsAndPlay2(numberOfTargets, displayTimeMs) {
         var tdID2 = "td" + targetNum2;
         var imgID2 = "img" + targetNum2;
 
+<<<<<<< HEAD
         $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='zombiebaby7.png'>");
+=======
+        $('#' + tdID2).on("click", clickedTarget2).append("<img id = " + imgID2 + " class= 'targetImg' src='lotusflower.png'>");
+>>>>>>> origin/master
         $('#' + imgID2).delay(displayTimeMs).hide(0);
     }
 
