@@ -4,7 +4,7 @@ var hits = 0;
 function letsRock() {
 
     if(hits !== targets) {
-        document.getElementById("level2").disabled = true; //not working right now
+        document.getElementById("level2").disabled = true;
     }
 
     var theGo = document.getElementById("goGetIt");
