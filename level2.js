@@ -1,44 +1,46 @@
-var clicks2 = 0;
-var targets2 = 8;
-var hits2 = 0;
-document.getElementById("level2").disabled = true; //not working right now
+var clicks = 0;
+var targets = 8;
+var hits = 0;
 
-function letsRock2() {
+function letsRock() {
+    if(hits !== targets) {
+        document.getElementById("level2").disabled = true; //not working right now
+    }
 
-    var theGo2 = document.getElementById("goGetIt");
-    theGo2.onclick = function () {
+    var theGo = document.getElementById("goGetIt");
+    theGo.onclick = function () {
         // Get random number of targets and do setup
-        var targetKount2 = targets2;
-        var targetTime2 = 10000;
+        var targetKount = targets;
+        var targetTime = 10000;
         // No start the game!
-        setUpTargetsAndPlay2(targetKount, targetTime);
+        setUpTargetsAndPlay(targetKount, targetTime);
     };
 }
 // Utility function to get a random table cell number
-function getRandomInt2(min, max) {
+function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 // This function gets called if player hits a target
-function clickedTarget2() {
+function clickedTarget() {
     // Right now, just updates a count.
     // Could use some player feedback here
-    hits2 += 1;
+    hits += 1;
 };
 
 // The main function that sets up targets and starts a game
-function setUpTargetsAndPlay2(numberOfTargets, displayTimeMs) {
-    clicks2 = 0;
-    targets2 = numberOfTargets;
-    hits2 = 0;
+function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
+    clicks = 0;
+    targets = numberOfTargets;
+    hits = 0;
 
     // Setup click detection for the entire table
     $("table").on("click", function () {
 
-        clicks2 += 1;
+        clicks += 1;
         // alert("clicked. Max = " + clicks);
-        if (clicks2 === targets2) {
-            document.write("No more clicks! You got " + hits2 + " out of " + targets2);
+        if (clicks === targets) {
+            alert("No more clicks! You got " + hits + " out of " + targets);
             // Turn off click detection
             $("td").off("click");
             $("table").off("click");
@@ -46,15 +48,15 @@ function setUpTargetsAndPlay2(numberOfTargets, displayTimeMs) {
         }
     });
 
-    console.log("Selecting " + targets2 + " targets");
+    console.log("Selecting " + targets + " targets");
     // Get the number of targets specified and randomly picks cells to display them in for the target table
-    for (var x = 0; x < targets2; x++) {
-        var targetNum2 = getRandomInt2(1, 50); // Pick a random table cell
-        console.log("Table cell selected for target = " + targetNum2);
-        var tdID2 = "td" + targetNum2;
-        var imgID2 = "img" + targetNum2;
+    for (var x = 0; x < targets; x++) {
+        var targetNum = getRandomInt(1, 50); // Pick a random table cell
+        console.log("Table cell selected for target = " + targetNum);
+        var tdID = "td" + targetNum;
+        var imgID = "img" + targetNum;
 
-        $('#' + tdID2).on("click", clickedTarget2).append("<img id = " + imgID2 + " class= 'targetImg' src='bird.png'>");
+        $('#' + tdID2).on("click", clickedTarget2).append("<img id = " + imgID2 + " class= 'targetImg' src='lotusflower.png'>");
         $('#' + imgID2).delay(displayTimeMs).hide(0);
     }
 
